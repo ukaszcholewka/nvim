@@ -13,5 +13,7 @@ nnoremap("<leader>qw", "<cmd>:qw<CR>")
 
 nnoremap("<leader>hh", "<cmd>:lua require(\"harpoon.ui\").toggle_quick_menu()<CR>")
 nnoremap("<leader>ha", "<cmd>:lua require(\"harpoon.mark\").add_file()<CR>")
-nnoremap("<leader>hn", "<cmd>:lua require(\"harpoon.ui\").nav_next()<CR>")
-nnoremap("<leader>hp", "<cmd>:lua require(\"harpoon.ui\").nav_prev()<CR>")
+nnoremap("<C-j>", "<cmd>:lua require(\"harpoon.ui\").nav_next()<CR>")
+nnoremap("<C-k>", "<cmd>:lua require(\"harpoon.ui\").nav_prev()<CR>")
+
+nnoremap("<leader>sv", "<cmd>call CocActionAsync('doHover'),<CR>")
