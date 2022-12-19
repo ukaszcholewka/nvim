@@ -7,16 +7,19 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-
+vim.opt.swapfile = false
+vim.opt.backup = false
 vim.opt.smartindent = true
 vim.opt.wrap = false
+vim.opt.updatetime = 50
+vim.opt.scrolloff = 8
 
 vim.g.mapleader = " "
 
 
-vim.opt.updatetime = 300;
 
 local keyset = vim.keymap.set
 
@@ -65,6 +68,20 @@ keyset("n", "gr", "<Plug>(coc-references)", {silent = true})
 local opts = {silent = true, nowait = true}
 keyset("x", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
 keyset("n", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
+
+keyset("v", "J", ":m '>+1<CR>gv=gv")
+keyset("v", "K", ":m '<-2<CR>gv=gv")
+keyset("x", "<leader>p", "\"_dP")
+keyset("v", "<leader>y", "\"+y")
+keyset("n", "<leader>y", "\"+y")
+keyset("v", "<leader>d", "\"_d")
+keyset("n", "<leader>d", "\"_d")
+
+keyset("n", "<leader>d", "<cmd>lnext<CR>zz")
+keyset("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+keyset("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
 
 
 -- Add `:Format` command to format current buffer.
